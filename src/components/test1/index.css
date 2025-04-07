@@ -1,7 +1,9 @@
-.custom-btn{
+.custom-btn {
   background-color: antiquewhite;
   padding: 5px;
   border-radius: 5%;
   margin: 10px 0;
-
+}
+.custom-btn button {
+  margin: 5px 0;
 }

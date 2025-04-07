@@ -1,0 +1,19 @@
+.user-list {
+  margin: 5px 0;
+}
+.user-list li {
+  list-style: inside;
+  padding: 5px 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+.admin-panel {
+  margin: 5px 0;
+}
+.login-panel {
+  margin: 5px 0;
+}
+.update-view {
+  cursor: pointer;
+  user-select: none;
+}
