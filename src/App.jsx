@@ -7,25 +7,34 @@ import 'reset.css';
 import './App.css';
 import { useState } from 'react';
 
+import { UseState1, UseStateArray } from './components/useState/index';
+
+import { UseReducerDemo1, UseReducerDemo2 } from './components/useReducer/index';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
     setCount(count + 1);
   }
+  // handleClick();
+
   return (
     <>
       <Main />
       {/* <MyButton />
       <MyUser />
       <Demo3 /> */}
-      <MainPanel />
+      {/* <MainPanel />
       <MainPanel2 />
       <UserList />
       <ClickButton />
-      <UpdateView />
-      <div>组件共享数据</div>
+      <UpdateView /> */}
+      {/* <div>组件共享数据</div>
       <MyShareBtn count={count} onClick={handleClick} />
-      <MyShareBtn count={count} onClick={handleClick} />
+      <MyShareBtn count={count} onClick={handleClick} /> */}
+      {/* <UseState1 />
+      <UseStateArray /> */}
+      <UseReducerDemo1 />
+      <UseReducerDemo2 />
     </>
   );
 }

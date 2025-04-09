@@ -1,0 +1,17 @@
+.my-useState {
+  display: flex;
+  align-items: center;
+}
+.my-useState p {
+  margin: 0 5px;
+}
+
+.my-useState-array {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.state-title {
+  font-size: 20px;
+  text-align: left;
+}

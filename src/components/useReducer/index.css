@@ -1,0 +1,18 @@
+.my-useReducer {
+  display: flex;
+  align-items: center;
+}
+.my-useReducer p {
+  margin: 0 5px;
+}
+
+.my-useReducer-array {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.state-title {
+  font-size: 20px;
+  text-align: left;
+  margin: 10px 0;
+}
