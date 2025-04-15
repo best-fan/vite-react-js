@@ -1,0 +1,8 @@
+.my-useTransition .ant-list {
+  text-align: left;
+  height: 400px;
+  overflow-y: scroll;
+}
+.my-useTransition {
+  height: 450px;
+}

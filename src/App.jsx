@@ -11,7 +11,8 @@ import { UseState1, UseStateArray } from './components/useState/index';
 
 import { UseReducerDemo1, UseReducerDemo2 } from './components/useReducer/index';
 
-import { UseSyncExternalStoreDemo, UseSyncExternalStoreDemo2 } from './components/useSyncExternalStore/index';
+// import { UseSyncExternalStoreDemo, UseSyncExternalStoreDemo2 } from './components/useSyncExternalStore/index';
+import { UseTransitionDemo } from './components/useTransition/index';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -37,8 +38,9 @@ function App() {
       <UseStateArray /> */}
       {/* <UseReducerDemo1 /> */}
       {/* <UseReducerDemo2 /> */}
-      <UseSyncExternalStoreDemo />
-      <UseSyncExternalStoreDemo2 />
+      {/* <UseSyncExternalStoreDemo />
+      <UseSyncExternalStoreDemo2 /> */}
+      <UseTransitionDemo />
     </>
   );
 }
