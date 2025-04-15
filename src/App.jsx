@@ -10,6 +10,8 @@ import { useState } from 'react';
 import { UseState1, UseStateArray } from './components/useState/index';
 
 import { UseReducerDemo1, UseReducerDemo2 } from './components/useReducer/index';
+
+import { UseSyncExternalStoreDemo, UseSyncExternalStoreDemo2 } from './components/useSyncExternalStore/index';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -33,8 +35,10 @@ function App() {
       <MyShareBtn count={count} onClick={handleClick} /> */}
       {/* <UseState1 />
       <UseStateArray /> */}
-      <UseReducerDemo1 />
-      <UseReducerDemo2 />
+      {/* <UseReducerDemo1 /> */}
+      {/* <UseReducerDemo2 /> */}
+      <UseSyncExternalStoreDemo />
+      <UseSyncExternalStoreDemo2 />
     </>
   );
 }
