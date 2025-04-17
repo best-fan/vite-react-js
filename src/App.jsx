@@ -17,6 +17,9 @@ import { UseTransitionDemo } from './components/useTransition/index';
 import { UseDeferredValueDemo } from './components/useDeferredValue/index';
 
 import { UseEffectDemo, UseEffectDemo1, UserInforDemo1 } from './components/useEffect/index';
+
+import { UseLayoutEffectDemo, UseLayoutEffectDemo1, UseShowScrollPosition } from './components/useLayoutEffect/index';
+
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -48,7 +51,10 @@ function App() {
       {/* <UseDeferredValueDemo /> */}
       {/* <UseEffectDemo />
       <UseEffectDemo1 /> */}
-      <UserInforDemo1 />
+      {/* <UserInforDemo1 /> */}
+      {/* <UseLayoutEffectDemo /> */}
+      {/* <UseLayoutEffectDemo1 /> */}
+      <UseShowScrollPosition />
     </>
   );
 }

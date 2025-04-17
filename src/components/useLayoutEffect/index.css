@@ -1,0 +1,12 @@
+#use-layout-effect-app1 {
+  width: 200px;
+  height: 200px;
+  background: red;
+}
+#use-layout-effect-app2 {
+  width: 200px;
+  height: 200px;
+  background: blue;
+  margin-top: 20px;
+  top: 230px;
+}
