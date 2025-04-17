@@ -1,0 +1,26 @@
+.user-infor-demo1-effect {
+  border: 1px solid #ddd;
+  width: 300px;
+  margin: 5px;
+  padding: 10px;
+  text-align: left;
+  min-height: 200px;
+}
+.user-infor-demo1-effect .search {
+  margin: 10px 0;
+}
+.user-infor-demo1-effect .user-data p {
+  margin: 5px 2px;
+  padding-left: 60px;
+}
+.user-infor-demo1-effect .user-data h2 {
+  font-weight: bold;
+}
+
+.user-infor-demo1-effect .loading {
+  opacity: 0.8;
+  color: aqua;
+  text-align: center;
+  position: relative;
+  top: 60px;
+}
