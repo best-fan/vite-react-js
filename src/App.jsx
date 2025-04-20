@@ -20,6 +20,12 @@ import { UseEffectDemo, UseEffectDemo1, UserInforDemo1 } from './components/useE
 
 import { UseLayoutEffectDemo, UseLayoutEffectDemo1, UseShowScrollPosition } from './components/useLayoutEffect/index';
 
+import { UseRefDemo, UseRefDemo2, UseRefTimmer } from './components/useRef/index';
+import {
+  UseImperativeHandleDemo,
+  UseImperativeHandleDemo2,
+  UseImperativeHandleForm,
+} from './components/useImperativeHandle/index';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -54,7 +60,13 @@ function App() {
       {/* <UserInforDemo1 /> */}
       {/* <UseLayoutEffectDemo /> */}
       {/* <UseLayoutEffectDemo1 /> */}
-      <UseShowScrollPosition />
+      {/* <UseShowScrollPosition /> */}
+      {/* <UseRefDemo />
+      <UseRefDemo2 /> */}
+      {/* <UseRefTimmer /> */}
+      {/* <UseImperativeHandleDemo /> */}
+      {/* <UseImperativeHandleDemo2 /> */}
+      <UseImperativeHandleForm />
     </>
   );
 }
