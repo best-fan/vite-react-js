@@ -26,6 +26,10 @@ import {
   UseImperativeHandleDemo2,
   UseImperativeHandleForm,
 } from './components/useImperativeHandle/index';
+
+import { UseContextDemo } from './components/useContext/index';
+import { UseReactMemoDemo, UserMemoDemo } from './components/useMemo/index';
+import { UseCallbackDemo, UseCallbackDemo2 } from './components/useCallback/index';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -66,7 +70,12 @@ function App() {
       {/* <UseRefTimmer /> */}
       {/* <UseImperativeHandleDemo /> */}
       {/* <UseImperativeHandleDemo2 /> */}
-      <UseImperativeHandleForm />
+      {/* <UseImperativeHandleForm /> */}
+      {/* <UseContextDemo /> */}
+      {/* <UseReactMemoDemo /> */}
+      {/* <UserMemoDemo /> */}
+      {/* <UseCallbackDemo /> */}
+      <UseCallbackDemo2 />
     </>
   );
 }
