@@ -37,6 +37,8 @@ import { UserCard } from './components/Card/index';
 
 import { CardList } from './components/Props/index';
 import { ControlledDemo } from './components/Controlled/index';
+
+import { AsyncDemo } from './components/AsyncCom/index';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -87,7 +89,8 @@ function App() {
       {/* <UseUseIdDemo /> */}
       {/* <UserCard /> */}
       {/* <CardList /> */}
-      <ControlledDemo />
+      {/* <ControlledDemo /> */}
+      <AsyncDemo />
     </>
   );
 }
