@@ -34,6 +34,8 @@ import { UseDebugValueDemo } from './components/useDebugValue/index';
 import { UseUseIdDemo } from './components/useId/index';
 
 import { UserCard } from './components/Card/index';
+
+import { CardList } from './components/Props/index';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -82,7 +84,8 @@ function App() {
       {/* <UseCallbackDemo2 /> */}
       {/* <UseDebugValueDemo /> */}
       {/* <UseUseIdDemo /> */}
-      <UserCard />
+      {/* <UserCard /> */}
+      <CardList />
     </>
   );
 }
