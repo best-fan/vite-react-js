@@ -1,0 +1,27 @@
+.user-card {
+  display: flex;
+  padding: 5px;
+  border: 2px inset #873939;
+  margin: 10px;
+
+  .card-header {
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+  .card-body {
+    text-align: left;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .card-title {
+      font-weight: bold;
+    }
+    .card-text {
+      color: beige;
+    }
+  }
+}

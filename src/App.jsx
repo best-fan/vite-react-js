@@ -32,6 +32,8 @@ import { UseReactMemoDemo, UserMemoDemo } from './components/useMemo/index';
 import { UseCallbackDemo, UseCallbackDemo2 } from './components/useCallback/index';
 import { UseDebugValueDemo } from './components/useDebugValue/index';
 import { UseUseIdDemo } from './components/useId/index';
+
+import { UserCard } from './components/Card/index';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -79,7 +81,8 @@ function App() {
       {/* <UseCallbackDemo /> */}
       {/* <UseCallbackDemo2 /> */}
       {/* <UseDebugValueDemo /> */}
-      <UseUseIdDemo />
+      {/* <UseUseIdDemo /> */}
+      <UserCard />
     </>
   );
 }
