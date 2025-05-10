@@ -1,6 +1,6 @@
 // 异步组件  Suspense
 
-import React, { Suspense, lazy, use } from 'react';
+import React, { useRef, Suspense, lazy, use } from 'react';
 
 // 使用场景  loading动画  骨架屏  代码分包按需加载 懒加载 瀑布流
 
@@ -9,9 +9,21 @@ import React, { Suspense, lazy, use } from 'react';
 import AsyncComponent from './asyncDemo';
 // 使用  异步组件加载  打包时组件会单独打包
 const AsyncComponent1 = lazy(() => import('./asyncDemo'));
-
 // 异步组件加载 对比
+// 引用 CreatePortalDemo 组件
+import { CreatePortalDemo } from '../createPortal/index';
+
 export const AsyncDemo = () => {
+  const modelRef = useRef(null);
+
+  const openModal = () => {
+    console.log(modelRef);
+
+    if (modelRef.current && modelRef.current.openModal) {
+      modelRef.current.openModal();
+    }
+  };
+
   return (
     <div>
       {/* // 未使用 异步组件加载 */}
@@ -20,6 +32,8 @@ export const AsyncDemo = () => {
       {/* 使用异步组件  加载时 显示 fallback */}
       <Suspense fallback={<div>loading...</div>}>
         <AsyncComponent1 />
+        <button onClick={openModal}>打开Modal</button>
+        <CreatePortalDemo title={'我是Modal'} content={'我是Modal内容'} ref={modelRef} />
       </Suspense>
       <AsyncDemo2 />
     </div>
