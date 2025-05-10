@@ -35,4 +35,19 @@ export default defineConfig({
   server: {
     port: 5388,
   },
+  css: {
+    // css module 配置
+    modules: {
+      // localsConvention 取值 为 camelCaseOnly 或 camelCase
+      // camelCaseOnly 只允许驼峰命名
+      // camelCase 允许驼峰命名和中划线命名
+      // 例如：.my-class => myClass
+      localsConvention: 'dashes',
+      // 生成的类名格式
+      // [name] 代表文件名
+      // [local] 代表类名
+      // [hash:base64:5] 代表哈希值，长度为5
+      generateScopedName: '[name]__[local]--[hash:base64:8]',
+    },
+  },
 });

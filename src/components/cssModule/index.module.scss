@@ -1,0 +1,9 @@
+.title {
+  color: red;
+  font-size: 32px;
+  display: inline-block;
+}
+:global(.globalTitle) {
+  color: blue;
+  font-size: 32px;
+}

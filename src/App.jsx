@@ -40,6 +40,9 @@ import { ControlledDemo } from './components/Controlled/index';
 
 import { AsyncDemo } from './components/AsyncCom/index';
 
+import { CssModuleDemo } from './components/cssModule';
+
+import { CssInJsDemo } from './components/cssModule/cssInJs';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -91,7 +94,9 @@ function App() {
       {/* <UserCard /> */}
       {/* <CardList /> */}
       {/* <ControlledDemo /> */}
-      <AsyncDemo />
+      {/* <AsyncDemo /> */}
+      {/* <CssModuleDemo /> */}
+      <CssInJsDemo />
     </>
   );
 }
