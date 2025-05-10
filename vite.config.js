@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import mockjs from 'mockjs';
 import url from 'node:url';
+
+import tailwindcss from '@tailwindcss/vite';
 // 编写一个vite插件 用于mock数据
 const viteMockServer = () => {
   return {
@@ -31,7 +33,7 @@ const viteMockServer = () => {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), viteMockServer()],
+  plugins: [react(), viteMockServer(), tailwindcss()],
   server: {
     port: 5388,
   },
