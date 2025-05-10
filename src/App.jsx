@@ -45,6 +45,9 @@ import { CssModuleDemo } from './components/cssModule';
 import { CssInJsDemo } from './components/cssModule/cssInJs';
 
 import { TailwindDemo } from './components/Tailwind/index';
+
+import router from './router/index';
+import { RouterProvider } from 'react-router';
 function App() {
   const [count, setCount] = useState(0);
   function handleClick() {
@@ -54,7 +57,7 @@ function App() {
 
   return (
     <>
-      <Main />
+      {/* <Main /> */}
       {/* <MyButton />
       <MyUser />
       <Demo3 /> */}
@@ -99,7 +102,9 @@ function App() {
       {/* <AsyncDemo /> */}
       {/* <CssModuleDemo /> */}
       {/* <CssInJsDemo /> */}
-      <TailwindDemo />
+      {/* <TailwindDemo /> */}
+
+      <RouterProvider router={router} />
     </>
   );
 }
