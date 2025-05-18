@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import { Button,Flex  } from 'antd';
+import { Button, Flex } from 'antd';
 export default function IndexPage() {
   const routes = [
     { path: '/', name: '首页' },
@@ -36,20 +36,19 @@ export default function IndexPage() {
     { path: '/async', name: '异步组件示例' },
     { path: '/css-module', name: 'CSS Module示例' },
     { path: '/css-in-js', name: 'CSS-in-JS示例' },
-    { path: '/tailwind', name: 'Tailwind示例' }
+    { path: '/tailwind', name: 'Tailwind示例' },
+    { path: '/layout', name: 'Layout示例' },
   ];
   return (
     <div className='index-page'>
       <h1>Index Page</h1>
       <p>Welcome to the Index page!</p>
-      <Flex gap="small" wrap>
-        {
-          routes.map(({ path, name }) => (
-            <Button key={path}  color="default" variant="filled" href={path}>
-              {name}
-            </Button>
-          ))
-        }
+      <Flex gap='small' wrap>
+        {routes.map(({ path, name }) => (
+          <Button key={path} color='default' variant='filled' href={path}>
+            {name}
+          </Button>
+        ))}
       </Flex>
     </div>
   );

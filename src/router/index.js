@@ -9,7 +9,11 @@ import { UseDeferredValueDemo } from '../components/useDeferredValue/index';
 import { UseEffectDemo, UseEffectDemo1, UserInforDemo1 } from '../components/useEffect/index';
 import { UseLayoutEffectDemo, UseLayoutEffectDemo1, UseShowScrollPosition } from '../components/useLayoutEffect/index';
 import { UseRefDemo, UseRefDemo2, UseRefTimmer } from '../components/useRef/index';
-import { UseImperativeHandleDemo, UseImperativeHandleDemo2, UseImperativeHandleForm } from '../components/useImperativeHandle/index';
+import {
+  UseImperativeHandleDemo,
+  UseImperativeHandleDemo2,
+  UseImperativeHandleForm,
+} from '../components/useImperativeHandle/index';
 import { UseContextDemo } from '../components/useContext/index';
 import { UseReactMemoDemo, UserMemoDemo } from '../components/useMemo/index';
 import { UseCallbackDemo, UseCallbackDemo2 } from '../components/useCallback/index';
@@ -23,6 +27,9 @@ import { CssModuleDemo } from '../components/cssModule';
 import { CssInJsDemo } from '../components/cssModule/cssInJs';
 import { TailwindDemo } from '../components/Tailwind/index';
 
+import { LayoutView } from '../layout/index';
+
+import { DetialView } from '../pages/Detial/index';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -163,7 +170,44 @@ const router = createBrowserRouter([
   {
     path: '/tailwind',
     Component: TailwindDemo,
-  }
+  },
+  // 嵌套路由
+  {
+    path: '/layout',
+    Component: LayoutView,
+    children: [
+      {
+        index: true, //嵌套路由 中 设置为默认路由
+        Component: HomeView,
+      },
+      {
+        path: 'home',
+        Component: HomeView,
+      },
+      {
+        path: 'about',
+        Component: AboutView,
+      },
+      {
+        path: 'detial/:id',
+        Component: DetialView,
+      },
+    ],
+  },
+  //布局路由  父元素的 path  省略 二级变成一级
+  {
+    Component: LayoutView,
+    children: [
+      {
+        path: 'useState1',
+        Component: UseState1,
+      },
+      {
+        path: 'useStateArray',
+        Component: UseStateArray,
+      },
+    ],
+  },
 ]);
 
 export default router;
