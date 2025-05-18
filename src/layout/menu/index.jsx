@@ -15,20 +15,14 @@ export const MenuView = () => {
           label: '路由1',
           type: 'group',
           children: [
-            { key: '/useStateArray', label: 'useStateArray' },
-            { key: '/useState1', label: 'useState' },
-          ],
-        },
-        {
-          key: 'g2',
-          label: 'Item 2',
-          type: 'group',
-          children: [
-            { key: '3', label: 'Option 3' },
-            { key: '4', label: 'Option 4' },
+            { key: '/useStateArray', label: '布局路由-useStateArray' },
+            { key: '/useState1', label: '布局路由-useState' },
           ],
         },
       ],
+    },
+    {
+      type: 'divider',
     },
     {
       key: '/layout',
@@ -41,10 +35,10 @@ export const MenuView = () => {
 
         {
           key: 'sub3',
-          label: 'Submenu',
+          label: '二级',
           children: [
-            { key: '7', label: 'Option 7' },
-            { key: '8', label: 'Option 8' },
+            { key: '7', label: '三级' },
+            { key: '8', label: '三级' },
           ],
         },
       ],
@@ -53,23 +47,29 @@ export const MenuView = () => {
       type: 'divider',
     },
     {
-      key: 'sub4',
-      label: 'Navigation Three',
-      icon: <SettingOutlined />,
-      children: [
-        { key: '9', label: 'Option 9' },
-        { key: '10', label: 'Option 10' },
-        { key: '11', label: 'Option 11' },
-        { key: '12', label: 'Option 12' },
-      ],
-    },
-    {
       key: 'grp',
       label: '动态路由',
       type: 'group',
       children: [
         { key: '/layout/detial/123', label: '动态路由一 ' },
         { key: '/layout/detial/12353434', label: '动态路由二' },
+      ],
+    },
+    {
+      type: 'divider',
+    },
+
+    {
+      key: 'demo1',
+      label: 'Demo页面',
+      icon: <MailOutlined />,
+      children: [
+        {
+          key: 'demo1-1',
+          label: '路由1',
+          type: 'group',
+          children: [{ key: '/routerJump', label: '路由跳转演示' }],
+        },
       ],
     },
   ];

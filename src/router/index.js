@@ -30,6 +30,13 @@ import { TailwindDemo } from '../components/Tailwind/index';
 import { LayoutView } from '../layout/index';
 
 import { DetialView } from '../pages/Detial/index';
+
+import {
+  RouterJumpDemo,
+  RouterJumpDetialDemo,
+  RouterJumpDetialDemo2,
+  RouterJumpDetialDemo3,
+} from './pages/RouterJump/index';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -205,6 +212,22 @@ const router = createBrowserRouter([
       {
         path: 'useStateArray',
         Component: UseStateArray,
+      },
+      {
+        path: 'routerJump',
+        Component: RouterJumpDemo,
+      },
+      {
+        path: 'routerJumpDetial',
+        Component: RouterJumpDetialDemo,
+      },
+      {
+        path: 'routerJumpDetial2/:id/:name/:age',
+        Component: RouterJumpDetialDemo2,
+      },
+      {
+        path: 'routerJumpDetial3',
+        Component: RouterJumpDetialDemo3,
       },
     ],
   },
