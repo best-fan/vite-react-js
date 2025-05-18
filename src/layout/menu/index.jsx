@@ -68,7 +68,14 @@ export const MenuView = () => {
           key: 'demo1-1',
           label: '路由1',
           type: 'group',
-          children: [{ key: '/routerJump', label: '路由跳转演示' }],
+          children: [
+            { key: '/routerJump', label: '路由跳转演示' },
+
+            {
+              key: '/routerJumpLazyLoad',
+              label: '懒加载路由',
+            },
+          ],
         },
       ],
     },

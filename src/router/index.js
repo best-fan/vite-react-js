@@ -229,6 +229,17 @@ const router = createBrowserRouter([
         path: 'routerJumpDetial3',
         Component: RouterJumpDetialDemo3,
       },
+      {
+        path: 'routerJumpLazyLoad',
+        lazy: async () => {
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          // 懒加载 打包项目时 会拆分当前文件
+          const layView = await import('../pages/Demo/lazyView.jsx');
+          return {
+            Component: layView.default,
+          };
+        },
+      },
     ],
   },
 ]);
