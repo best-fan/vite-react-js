@@ -75,6 +75,14 @@ export const MenuView = () => {
               key: '/routerJumpLazyLoad',
               label: '懒加载路由',
             },
+            {
+              key: '/routerAction',
+              label: '路由action',
+            },
+            {
+              key: '/routerLoader',
+              label: '路由loader',
+            },
           ],
         },
       ],
@@ -83,7 +91,11 @@ export const MenuView = () => {
   const navigate = useNavigate();
   const onClick = (e) => {
     console.log('click ', e);
-    navigate(e.key);
+    let { key } = e;
+    if (key === '/routerLoader') {
+      key += '/' + Math.floor(Math.random() * 10) + 1;
+    }
+    navigate(key);
   };
   return (
     <>

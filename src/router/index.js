@@ -36,7 +36,8 @@ import {
   RouterJumpDetialDemo,
   RouterJumpDetialDemo2,
   RouterJumpDetialDemo3,
-} from './pages/RouterJump/index';
+} from '../pages/Demo/routerJump.jsx';
+import { RouterActionDemo, RouterLoaderDemo } from '../pages/Demo/routerActions.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -237,6 +238,27 @@ const router = createBrowserRouter([
           const layView = await import('../pages/Demo/lazyView.jsx');
           return {
             Component: layView.default,
+          };
+        },
+      },
+      {
+        path: 'routerAction',
+        Component: RouterActionDemo,
+      },
+      {
+        path: 'routerLoader/:dataId',
+        Component: RouterLoaderDemo,
+        //  loader 处理完之后的数据 1. 数据预加载 2. 避免重复请求
+        loader: async ({ params }) => {
+          const { dataId } = params;
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          const data = await fetch(`https://jsonplaceholder.typicode.com/comments/${dataId}`).then((response) =>
+            response.json()
+          );
+          
+          return {
+            dataId,
+            data,
           };
         },
       },
