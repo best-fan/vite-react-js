@@ -244,6 +244,15 @@ const router = createBrowserRouter([
       {
         path: 'routerAction',
         Component: RouterActionDemo,
+        action:async({request})=>{
+          console.log('request',request);
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          const formData = await request.formData();
+          console.log('formData',formData.get('name'));
+          return {data:[],type:'routerAction'}
+          
+
+        }
       },
       {
         path: 'routerLoader/:dataId',
