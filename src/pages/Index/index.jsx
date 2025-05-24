@@ -38,6 +38,7 @@ export default function IndexPage() {
     { path: '/css-in-js', name: 'CSS-in-JS示例' },
     { path: '/tailwind', name: 'Tailwind示例' },
     { path: '/layout', name: 'Layout示例' },
+    { path: '/zustandDemo', name: 'zustand使用实例' },
   ];
   return (
     <div className='index-page'>

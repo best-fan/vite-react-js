@@ -41,6 +41,8 @@ import {
 import { RouterActionDemo, RouterLoaderDemo, RouterActionLoaderDemo } from '../pages/Demo/routerActions.jsx';
 
 import { NotFoundView, LoaderErrorDemoView, ErrorBoundaryDemoView } from '../pages/404/index';
+
+import { ZustandViewDemo } from '../pages/Demo/zustand.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -312,6 +314,10 @@ const router = createBrowserRouter([
         ErrorBoundary: ErrorBoundaryDemoView,
       },
     ],
+  },
+  {
+    path: '/zustandDemo',
+    Component: ZustandViewDemo,
   },
   {
     path: '*',
