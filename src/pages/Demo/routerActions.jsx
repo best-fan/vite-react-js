@@ -26,8 +26,8 @@ export const RouterActionDemo = () => {
     <>
       <Card>
         {/* <div>routerActionDemo</div> */}
-         {navigation.state === 'loading' && <div>loading...</div>}
-         {navigation.state === 'submitting' && <div>submitting...</div>}
+        {navigation.state === 'loading' && <div>loading...</div>}
+        {navigation.state === 'submitting' && <div>submitting...</div>}
         <Form
           onFinish={(values) => {
             console.log('values', values);
@@ -44,7 +44,6 @@ export const RouterActionDemo = () => {
           </Button>
         </Form>
       </Card>
-
     </>
   );
 };
@@ -68,6 +67,40 @@ export const RouterLoaderDemo = () => {
           </>
         );
       })}
+    </>
+  );
+};
+
+// Action Loader 综合使用
+export const RouterActionLoaderDemo = () => {
+  const submit = useSubmit(); // 走路由中的 action 方法进行提交暑假
+  const { data } = useLoaderData(); // 走路由中的 loader 方法获取数据
+  console.log('data', data);
+
+  return (
+    <>
+      <Card>
+        <Form
+          onFinish={(values) => {
+            submit(values, { method: 'post' }); //提交表单
+          }}>
+          <Form.Item name='name' label='姓名'>
+            <Input />
+          </Form.Item>
+          <Form.Item name='age' label='年龄'>
+            <Input />
+          </Form.Item>
+          <Button type='primary' htmlType='submit'>
+            提交
+          </Button>
+        </Form>
+
+        <Card title={data.name} extra={<a href='#'>More</a>} style={{ width: 300 }}>
+          <p>postId：{data.postId}</p>
+          <p>email：{data.email}</p>
+          <p>body：{data.body}</p>
+        </Card>
+      </Card>
     </>
   );
 };

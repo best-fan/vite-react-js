@@ -83,6 +83,14 @@ export const MenuView = () => {
               key: '/routerLoader',
               label: '路由loader',
             },
+            {
+              key: '/routerActionLoader',
+              label: '路由action-loader',
+            },
+            {
+              key: '/routerJumpDetial4',
+              label: '导航',
+            },
           ],
         },
       ],

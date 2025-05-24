@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Router } from 'react-router';
 import HomeView from '../pages/Index/index';
 import AboutView from '../pages/About/index';
 import BaseView from '../pages/Base/index';
@@ -36,8 +36,9 @@ import {
   RouterJumpDetialDemo,
   RouterJumpDetialDemo2,
   RouterJumpDetialDemo3,
+  RouterJumpDetialDemo4,
 } from '../pages/Demo/routerJump.jsx';
-import { RouterActionDemo, RouterLoaderDemo } from '../pages/Demo/routerActions.jsx';
+import { RouterActionDemo, RouterLoaderDemo, RouterActionLoaderDemo } from '../pages/Demo/routerActions.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -244,32 +245,54 @@ const router = createBrowserRouter([
       {
         path: 'routerAction',
         Component: RouterActionDemo,
-        action:async({request})=>{
-          console.log('request',request);
+        action: async ({ request }) => {
+          console.log('request', request);
           await new Promise((resolve) => setTimeout(resolve, 2000));
           const formData = await request.formData();
-          console.log('formData',formData.get('name'));
-          return {data:[],type:'routerAction'}
-          
-
-        }
+          console.log('formData', formData.get('name'));
+          return { data: [], type: 'routerAction' };
+        },
       },
       {
         path: 'routerLoader/:dataId',
         Component: RouterLoaderDemo,
         //  loader 处理完之后的数据 1. 数据预加载 2. 避免重复请求
         loader: async ({ params }) => {
-          const { dataId } = params;
+          const { dataId } = params; //通过url 获取参数
           await new Promise((resolve) => setTimeout(resolve, 2000));
           const data = await fetch(`https://jsonplaceholder.typicode.com/comments/${dataId}`).then((response) =>
             response.json()
           );
-          
+
           return {
             dataId,
             data,
           };
         },
+      },
+      {
+        path: 'routerActionLoader',
+        Component: RouterActionLoaderDemo,
+        loader: async () => {
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          const data = await fetch('https://jsonplaceholder.typicode.com/comments/88').then((response) =>
+            response.json()
+          );
+          return {
+            data,
+          };
+        },
+        action: async ({ request }) => {
+          console.log('request', request);
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          const formData = await request.formData();
+          console.log('formData', formData.get('name'));
+          return { data: [], type: 'routerAction' };
+        },
+      },
+      {
+        path: 'routerJumpDetial4',
+        Component: RouterJumpDetialDemo4,
       },
     ],
   },
