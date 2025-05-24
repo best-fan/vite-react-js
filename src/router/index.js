@@ -39,6 +39,8 @@ import {
   RouterJumpDetialDemo4,
 } from '../pages/Demo/routerJump.jsx';
 import { RouterActionDemo, RouterLoaderDemo, RouterActionLoaderDemo } from '../pages/Demo/routerActions.jsx';
+
+import { NotFoundView, LoaderErrorDemoView, ErrorBoundaryDemoView } from '../pages/404/index';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -294,7 +296,26 @@ const router = createBrowserRouter([
         path: 'routerJumpDetial4',
         Component: RouterJumpDetialDemo4,
       },
+      {
+        path: 'routerLoaderError',
+        Component: LoaderErrorDemoView,
+        // ErrorBoundary是用于捕获路由loader或action的错误，并进行处理。
+        loader: async () => {
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          throw {
+            message: '加载失败',
+            status: 500,
+            statusText: '加载失败',
+            data: '加载失败',
+          };
+        },
+        ErrorBoundary: ErrorBoundaryDemoView,
+      },
     ],
+  },
+  {
+    path: '*',
+    Component: NotFoundView,
   },
 ]);
 

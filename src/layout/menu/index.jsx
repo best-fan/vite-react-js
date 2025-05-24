@@ -91,6 +91,10 @@ export const MenuView = () => {
               key: '/routerJumpDetial4',
               label: '导航',
             },
+            {
+              key: '/routerLoaderError',
+              label: '路由loader错误',
+            },
           ],
         },
       ],
